@@ -1,6 +1,19 @@
 <template>
   <div class="app-container">
+    <WeatherWidget />
     <h1 class="page-title">最新記事</h1>
+    <div class="search-container">
+      <form action="https://www.google.com/search" method="get" class="search-form">
+        <input type="text" name="q" placeholder="Googleで検索" class="search-input">
+        <button type="submit" class="search-button">検索</button>
+      </form>
+      <div class="ai-buttons">
+        <a href="https://claude.ai" target="_blank" class="ai-button claude">Claude</a>
+        <a href="https://chat.openai.com" target="_blank" class="ai-button chatgpt">ChatGPT</a>
+        <a href="https://www.perplexity.ai" target="_blank" class="ai-button perplexity">Perplexity</a>
+        <a href="https://gemini.google.com" target="_blank" class="ai-button gemini">Gemini</a>
+      </div>
+    </div>
     <div class="articles-grid">
       <ArticleCard 
         v-for="(article, index) in articles" 
@@ -23,6 +36,76 @@
   font-weight: 700;
   text-align: center;
   margin-bottom: 32px;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.search-form {
+  display: flex;
+}
+
+.ai-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ai-button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.ai-button:hover {
+  opacity: 0.9;
+}
+
+.claude {
+  background-color: #4a6fa5;
+}
+
+.chatgpt {
+  background-color: #74aa9c;
+}
+
+.perplexity {
+  background-color: #6e6ed6;
+}
+
+.gemini {
+  background-color: #7d4dff;
+}
+
+.search-input {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+  width: 300px;
+  font-size: 1rem;
+}
+
+.search-button {
+  padding: 8px 16px;
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.search-button:hover {
+  background-color: #3367d6;
 }
 
 .articles-grid {
@@ -50,10 +133,11 @@
 
 <script>
 import ArticleCard from './components/ArticleCard.vue'
+import WeatherWidget from './components/WeatherWidget.vue'
 import { parseCSV } from './utils/csvParser.js'
 
 export default {
-  components: { ArticleCard },
+  components: { ArticleCard, WeatherWidget },
   data() {
     return {
       articles: []
