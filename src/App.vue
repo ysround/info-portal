@@ -50,6 +50,7 @@
 
 <script>
 import ArticleCard from './components/ArticleCard.vue'
+import { parseCSV } from './utils/csvParser.js'
 
 export default {
   components: { ArticleCard },
@@ -58,30 +59,12 @@ export default {
       articles: []
     }
   },
-    async mounted() {
-      const response = await fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vRaEeOEwXVNIxeNWJTgTlJLH4AAOS3UbfUrd_RYf9qb4Hlj8xxOPwxYu599ZKM0GxPkf7-EwwJNpeBC/pub?gid=1343466925&single=true&output=csv')
-      const csvData = await response.text()
-      console.log('CSVデータ:', csvData)
-      this.articles = this.parseCSV(csvData)
-      console.log('パース後データ:', this.articles)
-  },
-  methods: {
-    parseCSV(csv) {
-      const lines = csv.split('\n')
-      const headers = lines[0].split(',')
-      const articles = lines.slice(1).map(line => {
-        const values = line.split(',')
-        const article = headers.reduce((obj, header, i) => {
-          // ヘッダー名を正確にマッチさせる
-          obj[header.trim().toLowerCase()] = values[i]?.trim() || ''
-          return obj
-        }, {})
-        console.log('Parsed article:', article) // デバッグ用
-        return article
-      })
-      console.log('All articles:', articles) // デバッグ用
-      return articles
-    }
+  async mounted() {
+    const response = await fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vRaEeOEwXVNIxeNWJTgTlJLH4AAOS3UbfUrd_RYf9qb4Hlj8xxOPwxYu599ZKM0GxPkf7-EwwJNpeBC/pub?gid=1343466925&single=true&output=csv')
+    const csvData = await response.text()
+    console.log('CSVデータ:', csvData)
+    this.articles = parseCSV(csvData)
+    console.log('パース後データ:', this.articles)
   }
 }
 </script>

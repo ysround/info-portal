@@ -84,7 +84,7 @@ export default {
   },
   methods: {
     openArticle() {
-      window.open(this.article.link, '_blank')
+      window.open(this.article.link, '_blank', 'noopener,noreferrer')
     },
     formatDate(dateString) {
       // "2025/04/13 13:54:35" 形式を処理
