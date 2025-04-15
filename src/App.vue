@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
     <WeatherWidget />
-    <h1 class="page-title">最新記事</h1>
+    <h1 class="page-title">SoloPath</h1>
     <div class="search-container">
       <form action="https://www.google.com/search" method="get" class="search-form">
         <input type="text" name="q" placeholder="Googleで検索" class="search-input">
