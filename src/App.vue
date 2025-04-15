@@ -34,7 +34,7 @@
   font-size: 1.875rem;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
 
 .search-container {
@@ -110,7 +110,7 @@
 .articles-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 16px;
 }
 
 @media (min-width: 768px) {

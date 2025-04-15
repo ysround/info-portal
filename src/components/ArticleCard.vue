@@ -32,23 +32,23 @@
 }
 
 .card-content {
-  padding: 24px;
+  padding: 16px;
 }
 
 .article-title {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 .article-date {
   color: #666;
   font-size: 0.875rem;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .summary-container {
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .article-summary {
