@@ -1,6 +1,5 @@
 <template>
   <div class="app-container">
-    <WeatherWidget />
     <h1 class="page-title">SoloPath</h1>
     <div class="search-container">
       <form action="https://www.google.com/search" method="get" class="search-form">
@@ -133,11 +132,10 @@
 
 <script>
 import ArticleCard from './components/ArticleCard.vue'
-import WeatherWidget from './components/WeatherWidget.vue'
 import { parseCSV } from './utils/csvParser.js'
 
 export default {
-  components: { ArticleCard, WeatherWidget },
+  components: { ArticleCard },
   data() {
     return {
       articles: []
