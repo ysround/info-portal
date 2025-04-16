@@ -1,6 +1,7 @@
 <template>
   <div class="app-container">
     <h1 class="page-title">AI・IT情報収集ポータル</h1>
+    <p class="page-description">AIやITに関するニュース・知識・トレンドを、コンパクトにまとめて発信する情報ポータルです。日々の情報収集にご活用ください。</p>
     <div class="search-container">
       <form action="https://www.google.com/search" method="get" class="search-form">
         <input type="text" name="q" placeholder="Googleで検索" class="search-input">
@@ -36,6 +37,17 @@
   font-weight: 700;
   text-align: center;
   margin-bottom: 16px;
+}
+
+.page-description {
+  text-align: center;
+  color: #4b5563;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  margin-bottom: 16px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .search-container {
@@ -115,7 +127,7 @@
 .articles-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
+  gap: 24px;
 }
 
 @media (min-width: 768px) {
