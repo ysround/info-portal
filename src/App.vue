@@ -11,6 +11,7 @@
         <a href="https://chat.openai.com" target="_blank" class="ai-button chatgpt">ChatGPT</a>
         <a href="https://www.perplexity.ai" target="_blank" class="ai-button perplexity">Perplexity</a>
         <a href="https://gemini.google.com" target="_blank" class="ai-button gemini">Gemini</a>
+        <a href="https://grok.x.com" target="_blank" class="ai-button grok">Grok</a>
       </div>
     </div>
     <div class="articles-grid">
@@ -83,6 +84,10 @@
 
 .gemini {
   background-color: #7d4dff;
+}
+
+.grok {
+  background-color: #000000;
 }
 
 .search-input {
